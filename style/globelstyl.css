@@ -1,0 +1,15 @@
+body {
+    background-image: url(../asssets/img/bg-body-bestellapp4.webp);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+@media screen and (min-width: 1280px) {
+    
+body {
+    padding: 0px max(0px, calc(50% - 720px));
+}
+
+}
