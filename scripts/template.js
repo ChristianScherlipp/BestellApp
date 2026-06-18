@@ -7,7 +7,19 @@ function setDishesMenu() {
                     <h2>Suppen & Vorspeisen</h2>
                 </section>
                 <section class="main-dishes" id="soups-stews" value="soupe">
-                    
+                    <section class="main-dishes-card">
+                        <img src="./asssets/img/bestellAppLogo2.webp" alt="">
+                        <section class="main-dishes-card-body">
+                            <div class="dishes-card-text">
+                                <h3>ABCDEFG</h3>
+                                <p>ich bin ein schwein</p>
+                            </div>
+                            <div class="dishes-card-price-button">
+                                <p><strong>17,99 €</strong></p>
+                                <button>Hinzufügen</button>
+                            </div>
+                        </section>
+                    </section>
                 </section>
             </section>
             <section class="main-course-content dishes">

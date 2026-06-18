@@ -12,7 +12,7 @@
 
 .main-headline {
     width: 100%;
-    height: 3rem;
+    height: 3.75rem;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -22,19 +22,80 @@
     color: white;
 }
 
+.main-headline > h2 {
+    font-size: 2.5rem;
+}
+
 .main-headline > img {
     width: 4.5rem;
     margin-left: 20px;
     filter: invert(10) saturate(10) sepia(10) brightness(10) ;
 }
 
-#headline-main2  img {
-    width: 6rem;
+.main-dishes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
-.main-dishes{
-    font-size: 2rem; 
-    height: 100px;
+.main-dishes-card {
+    width: 80%;
+    height: auto;
+    display: flex;
+    background-color: rgb(218, 194, 151);
+    border-radius: 0.75rem;
+    padding: 0.625rem;
+}
+
+.main-dishes-card > img {
+    width: 14rem;
+    height: 8rem;
+    border-radius: 0.75rem;
+}
+
+.main-dishes-card-body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0.75rem;
+}
+
+.dishes-card-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3.5rem;
+}
+
+.dishes-card-text > h3 {
+    font-size: 2.5rem;
+}
+
+.dishes-card-text > p {
+    font-size: 1rem;
+}
+
+.dishes-card-price-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.dishes-card-price-button > p {
+    font-size: 2rem;
+}
+
+.dishes-card-price-button > button {
+    font-size: 1rem;
+    height: 2rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: rgb(80, 53, 32);
+    color: white;
 }
 
 .basket-wrapper {
