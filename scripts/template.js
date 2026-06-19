@@ -1,60 +1,14 @@
 function setDishesMenu() {
     return `
-        <section class="main-content">
-            <section class="main-soups-stews-content dishes">
-                <section class="main-headline" id="headline-main1">
-                    <img src="./asssets/icons/soupDishes.svg" alt="Bild von einem Vorspeise Logo" >
-                    <h2>Suppen & Vorspeisen</h2>
-                </section>
-                <section class="main-dishes" id="soups-stews" value="soupe">
-                    <section class="main-dishes-card">
-                        <img src="./asssets/img/bestellAppLogo2.webp" alt="">
-                        <section class="main-dishes-card-body">
-                            <div class="dishes-card-text">
-                                <h3>ABCDEFG</h3>
-                                <p>ich bin ein schwein</p>
-                            </div>
-                            <div class="dishes-card-price-button">
-                                <p><strong>17,99 €</strong></p>
-                                <button>Hinzufügen</button>
-                            </div>
-                        </section>
-                    </section>
-                </section>
-            </section>
-            <section class="main-course-content dishes">
-                <section class="main-headline" id="headline-main2">
-                    <img src="./asssets/icons/courseDishes.svg" alt="Bild von einem Hauptspeise Logo">
-                    <h2>Hauptgericht</h2>
-                </section>
-                <section class="main-dishes" id="course-dishes" value="courseDishes">
-                    
-                </section>
-            </section>
-            <section class="main-side-dishes-content dishes">
-                <section class="main-headline" id="headline-main3">
-                    <img src="./asssets/icons/sideDishes2.svg" alt="Bild von einem Beilage Logo">
-                    <h2>Beilagen</h2>
-                </section>
-                <section class="main-dishes" id="side-dishes" value="sideDishes">
-                    
-                </section>
-            </section>
-            <section class="main-desserts-content dishes">
-                <section class="main-headline" id="headline-main4">
-                    <img src="./asssets/icons/desserts.svg" alt="Bild von einem Desserts Logo">
-                    <h2>Desserts</h2>
-                </section>
-                <section class="main-dishes" id="desserts" value="desserts">
-                    
-                </section>
-            </section>
+        <section class="main-content" id="mainDishes">
+            
         </section>
         <section class="basket-wrapper">
             <section class="basket-content-wrapper">
                 <section class="basket">
                     <h2>Ihr Warenkorb</h2>
                     <section class="basket-content">
+
                     </section>
                     <section class="basket-buy">
                         <div>
@@ -73,6 +27,36 @@ function setDishesMenu() {
                     </section>
                 </section>
                 <button>Jetzt Bezahlen</button>
-            </Section>
+            </section>
         </section>`;
+}
+
+function setCategory(id, icon, title) {
+    return `
+    <section class="main-soups-stews-content dishes">
+        <section class="main-headline">
+            <img src="./asssets/icons/${icon}.svg" alt="${title} Logo">
+            <h2>${title}</h2>
+        </section>
+        <section class="main-dishes" id="${id}">
+        </section>
+    </section>`;
+}
+
+function setMenuCard(dish) {
+    return`
+    <section class="main-dishes-card">
+        <img src="./asssets/img/bestellAppLogo2.webp" alt="">
+        <section class="main-dishes-card-body">
+            <div class="dishes-card-text">
+                <h3>${dish.name}</h3>
+                <p>${dish.description}</p>
+            </div>
+            <div class="dishes-card-price-button">
+                <p><strong>${dish.price.toFixed(2).replace('.', ',')} €</strong></p>
+                <button>Hinzufügen</button>
+            </div>
+        </section>
+    </section>
+    `;
 }

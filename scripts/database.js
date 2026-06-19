@@ -1,3 +1,10 @@
+const categories = [
+    { id: 'soups-stews',   key: 'soupe',       icon: 'soupDishes',   title: 'Suppen & Vorspeisen' },
+    { id: 'course-dishes', key: 'courseDishes', icon: 'courseDishes', title: 'Hauptgericht'         },
+    { id: 'side-dishes',   key: 'sideDishes',   icon: 'sideDishes2',  title: 'Beilagen'             },
+    { id: 'desserts',      key: 'desserts',     icon: 'desserts',     title: 'Desserts'             },
+];
+
 const dishesLibrary = {
     soupe: [
     {
