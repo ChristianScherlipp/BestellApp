@@ -52,9 +52,11 @@
 }
 
 .main-dishes-card > img {
-    width: 14rem;
-    height: 8rem;
+    min-width: 16rem;
+    height: 10rem;
     border-radius: 0.75rem;
+    object-fit: fill;
+    image-rendering: auto;
 }
 
 .main-dishes-card-body {

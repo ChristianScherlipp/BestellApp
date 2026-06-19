@@ -2,7 +2,8 @@
 
 function init() {
     renderDishesMenu();
-    renderCardDishes()
+    renderCardDishes();
+    renderBasket();
 }
 
 function renderDishesMenu() {
@@ -23,4 +24,9 @@ function renderCardDishes() {
             container.innerHTML += setMenuCard(dish);
         });
     });
+}
+
+function renderBasket() {
+    const basketRef = document.getElementById('basket-content')
+    basketRef.innerHTML = setBasketCard();
 }

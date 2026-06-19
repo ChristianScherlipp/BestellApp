@@ -7,7 +7,7 @@ function setDishesMenu() {
             <section class="basket-content-wrapper">
                 <section class="basket">
                     <h2>Ihr Warenkorb</h2>
-                    <section class="basket-content">
+                    <section id="basket-content" class="basket-content">
                         
                     </section>
                     <section class="basket-buy">
@@ -46,7 +46,7 @@ function setCategory(id, icon, title) {
 function setMenuCard(dish) {
     return `
     <section class="main-dishes-card">
-        <img src="./asssets/img/dishes/berliner-eisbein.webp" alt="${dish.name}">
+        <img src="./asssets/img/dishes/${dish.image}.webp" alt="${dish.name}">
         <section class="main-dishes-card-body">
             <div class="dishes-card-text">
                 <h3>${dish.name}</h3>
@@ -63,12 +63,12 @@ function setMenuCard(dish) {
 
 function setBasketCard() {
     return `
-    <section class="main-dishes-card-body">
-        <div class="dishes-card-text">
-            <h3>${dish.name}</h3>
+    <section class="main-basket-card-body">
+        <div class="basket-card-text">
+            <h3>Hallo</h3>
         </div>
-        <div class="dishes-card-price-button">
-            <p><strong>${dish.price.toFixed(2).replace('.', ',')} €</strong></p>
+        <div class="basket-card-price-button">
+            <p><strong>Preis €</strong></p>
         </div>
     </section>
     `;
