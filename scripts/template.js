@@ -11,22 +11,22 @@ function setDishesMenu() {
                         
                     </section>
                     <section class="basket-buy">
-                        <div>
+                        <div class="subtotal">
                             <p>Zwischensumm:</p>
-                            <p></p>
+                            <p>Price €</p>
                         </div>
-                        <div>
+                        <div class="delivery-costs">
                             <p>Liferkosten:</p>
-                            <p></p>
+                            <p>fix price €</p>
                         </div>
                         <hr>
-                        <div>
+                        <div class="final-price">
                             <p><strong>Total</strong>:</p>
-                            <p></p>
+                            <p>fixPrice + Price €</p>
                         </div>
                     </section>
                 </section>
-                <button>Jetzt Bezahlen</button>
+                <button onclick="clearBasket()">Jetzt Bezahlen</button>
             </section>
         </section>`;
 }
@@ -54,22 +54,29 @@ function setMenuCard(dish) {
             </div>
             <div class="dishes-card-price-button">
                 <p><strong>${dish.price.toFixed(2).replace('.', ',')} €</strong></p>
-                <button>Hinzufügen</button>
+                <button onclick="addToBasket('${dish.name}', ${dish.price})">Hinzufügen</button>
             </div>
         </section>
     </section>
     `;
 }
 
-function setBasketCard() {
+function setBasketCard(item) {
     return `
     <section class="main-basket-card-body">
         <div class="basket-card-text">
-            <h3>Hallo</h3>
+            <h3>1 x ${item.name}</h3>
         </div>
         <div class="basket-card-price-button">
-            <p><strong>Preis €</strong></p>
+            <div class="basket-card-price-button-counter">
+                <button onclick="changeCount('${item.name}', -1)">-</button>
+                <p>${item.count}</p>
+                <button onclick="changeCount('${item.name}', 1)">+</button>
+            </div>
+            <p><strong>${(item.price * item.count).toFixed(2).replace('.', ',')} €</strong></p>
         </div>
     </section>
     `;
 }
+
+

@@ -117,10 +117,9 @@
     position: sticky;
     top: 0;
     flex-grow: 1;
-    border: 2px solid black;
     border-top-left-radius: 1.25rem;
     border-bottom-left-radius: 1.25rem;
-    background-color: oklch(42.925% 0.04505 60.966);
+    background-color: rgb(98, 74, 54);
 }
 
 .basket{
@@ -147,7 +146,7 @@
     color: white;
 }
 
-.basket-content-wrapper button {
+.basket-content-wrapper > button {
     width: 10rem;
     height: 3rem;
     border: none;
@@ -163,10 +162,90 @@
     cursor: pointer;
 }
 
+.basket-content {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+}
+
+.basket-content::-webkit-scrollbar{
+    width: 4px;
+}
+
+.basket-content::-webkit-scrollbar-track{
+    background: whitesmoke;
+    border-radius: 6px;
+    
+}
+
+.basket-content::-webkit-scrollbar-thumb{
+    background-color: rgb(80, 53, 32);
+    border-radius: 6px;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery-costs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.final-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-basket-card-body {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    background-color: rgb(218, 194, 151);
+}
+
+.basket-card-text {
+    margin: 0.5rem;
+}
+
+.basket-card-price-button {
+    width: 90%;
+    margin: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket-card-price-button-counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.basket-card-price-button-counter > button {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: transparent;
+    color: rgb(80, 53, 32);
+    cursor: pointer;
+}
+
 @media screen and (min-width: 1280px) {
     
-.main-content-wrapper {
+/* .main-content-wrapper {
     padding: 0px max(0px, calc(50% - 720px));
-}
+} */
 
 }
