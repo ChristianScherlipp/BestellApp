@@ -9,7 +9,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem;
     width: 100%;
     height: 600px;
     position: sticky;
@@ -18,6 +17,20 @@
     border-top-left-radius: 1.25rem;
     border-bottom-left-radius: 1.25rem;
     background-color: rgb(98, 74, 54);
+}
+
+.basket-collapse{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    width: 100%;
+    height: 600px;
+}
+
+.basket-button-nav {
+    display: flex;
 }
 
 .basket{
@@ -44,7 +57,7 @@
     color: white;
 }
 
-.basket-content-wrapper > button {
+.basket-collapse > button {
     width: 10rem;
     height: 3rem;
     border: none;
@@ -138,4 +151,78 @@
     background-color: transparent;
     color: rgb(80, 53, 32);
     cursor: pointer;
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .basket-wrapper {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .basket-content-wrapper {
+        height: auto;
+        border-bottom-left-radius: 0;
+        padding: 0;
+    }
+
+    .basket-button-nav {
+        width: 100%;
+    }
+
+    /* Toggle Button */
+    .basket-toggle {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background-color: rgb(80, 53, 32);
+        color: white;
+        border: none;
+        font-size: 1.125rem;
+        cursor: pointer;
+    }
+
+    .basket-toggle > button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .basket-toggle img {
+        width: 1rem;
+        display: flex;
+        /* filter: invert(1); */
+        transition: transform 0.3s ease;
+    }
+
+    /* Eingeklappter Inhalt - standardmäßig versteckt */
+    .basket-collapse {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1.25rem;
+    }
+
+    /* Ausgeklappt */
+    .basket-open {
+        max-height: 500px;
+        padding: 1.25rem;
+    }
+
+    .basket-content {
+        height: 8rem;
+    }
+
+    .main-content-wrapper {
+        padding-bottom: 60px; /* nur Toggle-Button Höhe */
+    }
 }

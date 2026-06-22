@@ -92,3 +92,36 @@
 } */
 
 }
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    #header-logo {
+        left: 30%;
+        width: 200px;
+        height: 200px;
+        margin-top: -100px;
+    }
+
+    .header-headline h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Smartphone */
+@media screen and (max-width: 768px) {
+    #header-logo {
+        left: 20%;
+        width: 150px;
+        height: 150px;
+        margin-top: -75px;
+    }
+
+    .header-headline h1 {
+        font-size: 1.75rem;
+    }
+
+    .header-content > p {
+        font-size: 1rem;
+        text-align: center;
+    }
+}

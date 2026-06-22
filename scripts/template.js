@@ -5,28 +5,44 @@ function setDishesMenu() {
         </section>
         <section class="basket-wrapper">
             <section class="basket-content-wrapper">
-                <section class="basket">
-                    <h2>Ihr Warenkorb</h2>
-                    <section id="basket-content" class="basket-content">
-                        
-                    </section>
-                    <section class="basket-buy">
-                        <div class="subtotal">
-                            <p>Zwischensumm:</p>
-                            <p>Price €</p>
-                        </div>
-                        <div class="delivery-costs">
-                            <p>Liferkosten:</p>
-                            <p>fix price €</p>
-                        </div>
-                        <hr>
-                        <div class="final-price">
-                            <p><strong>Total</strong>:</p>
-                            <p>fixPrice + Price €</p>
-                        </div>
-                    </section>
+                <section class="basket-button-nav">
+                    <button class="d-none basket-toggle" onclick="">
+                        <img src="./asssets/icons/home.svg" alt="Pfeil">
+                    </button>
+                    <button class="d-none basket-toggle" onclick="">
+                        <img src="./asssets/icons/person.svg" alt="Pfeil">
+                    </button>
+                    <button class="d-none basket-toggle" onclick="">
+                        <img src="./asssets/icons/bestellAppLogo.svg" alt="Pfeil">
+                    </button>
+                    <button class="d-none basket-toggle" onclick="toggleBasket()">
+                        <img src="./asssets/icons/basket-empty.svg" alt="Pfeil">
+                    </button>
                 </section>
-                <button onclick="openDialog()">Jetzt Bezahlen</button>
+                <section id="basket-collapse" class="basket-collapse">
+                    <section class="basket">
+                        <h2>Ihr Warenkorb</h2>
+                        <section id="basket-content" class="basket-content">
+                            
+                        </section>
+                        <section class="basket-buy">
+                            <div class="subtotal">
+                                <p>Zwischensumm:</p>
+                                <p>Price €</p>
+                            </div>
+                            <div class="delivery-costs">
+                                <p>Liferkosten:</p>
+                                <p>fix price €</p>
+                            </div>
+                            <hr>
+                            <div class="final-price">
+                                <p><strong>Total</strong>:</p>
+                                <p>fixPrice + Price €</p>
+                            </div>
+                        </section>
+                    </section>
+                    <button onclick="openDialog()">Jetzt Bezahlen</button>
+                </section>
             </section>
         </section>`;
 }

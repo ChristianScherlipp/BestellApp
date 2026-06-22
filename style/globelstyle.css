@@ -6,10 +6,16 @@ body {
     background-attachment: fixed;
 }
 
+.d-none{
+    display: none;
+}
+
 @media screen and (min-width: 1280px) {
     
 body {
     padding: 0px max(0px, calc(50% - 720px));
 }
+
+
 
 }

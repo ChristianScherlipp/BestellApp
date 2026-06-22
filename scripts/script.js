@@ -102,3 +102,8 @@ function closeDialog(){
 function renderPayDialog() {
     document.body.innerHTML += setPayDialog();
 }
+
+function toggleBasket() {
+    const basketContent = document.getElementById('basket-collapse');
+    basketContent.classList.toggle('basket-open'); // Klasse hinzufügen oder entfernen
+}
