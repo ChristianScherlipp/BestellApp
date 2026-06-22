@@ -26,7 +26,7 @@ function setDishesMenu() {
                         </div>
                     </section>
                 </section>
-                <button onclick="clearBasket()">Jetzt Bezahlen</button>
+                <button onclick="openDialog()">Jetzt Bezahlen</button>
             </section>
         </section>`;
 }
@@ -76,6 +76,21 @@ function setBasketCard(item) {
             <p><strong>${(item.price * item.count).toFixed(2).replace('.', ',')} €</strong></p>
         </div>
     </section>
+    `;
+}
+
+function setPayDialog() {
+    return `
+    <dialog id="pay-dialog">
+        <section class="dialog-content">
+            <h2>Bestellung bestätigen</h2>
+            <p>Möchten sie Ihre Bestellung jetz bezahlen</p>
+            <div class="dialog-buttons">
+                <button onclick="confirmPayment()">Ja, bezahlen</button>
+                <button onclick="closeDialog()">Abbrechen</button>
+            </div>
+        </section>
+    </dialog>
     `;
 }
 

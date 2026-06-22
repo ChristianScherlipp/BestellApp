@@ -4,6 +4,7 @@ function init() {
     renderDishesMenu();  // Grundgerüst + Warenkorb-Hülle rendern
     renderCardDishes();  // Alle Gerichte-Karten rendern
     renderBasket();      // Warenkorb rendern (erstmal leer)
+    renderPayDialog();
 }
 
 function renderDishesMenu() {
@@ -68,8 +69,8 @@ function updatePrice() {
     const subtotal = basket.reduce((sum, item) => sum + item.price * item.count, 0);
                      //                                 ↑ aktueller Stand + Preis × Anzahl des Gerichts
                      //                            ↑ läuft durch jedes Gericht
-                     //                                                              ↑ startet bei 0
-    const delivery = basket.length > 0 ? 4.99 : 0; // Lieferkosten: 2,99€ wenn Warenkorb nicht leer, sonst 0
+                     //                                                           ↑ startet bei 0
+    const delivery = basket.length > 0 ? 4.99 : 0; // Lieferkosten: 4,99€ wenn Warenkorb nicht leer, sonst 0
     
     const total = subtotal + delivery; // Gesamtpreis = Zwischensumme + Lieferkosten
 
@@ -82,4 +83,22 @@ function updatePrice() {
 function clearBasket() {
     basket = []; // Array leeren
     renderBasket(); // Warenkorb neu rendern (jetzt leer)
+}
+
+function openDialog(){
+    if (basket.length === 0) return; // Nichts tun wen Warenkorb leer 
+    document.getElementById('pay-dialog').showModal(); // Dialog öffnen
+}
+
+function confirmPayment(){
+    clearBasket(); // Warenkorb leeren
+    closeDialog(); // Dialog schließen
+}
+
+function closeDialog(){
+    document.getElementById('pay-dialog').close();
+}
+
+function renderPayDialog() {
+    document.body.innerHTML += setPayDialog();
 }
