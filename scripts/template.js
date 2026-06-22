@@ -5,7 +5,7 @@ function setDishesMenu() {
         </section>
         <section class="basket-wrapper">
             <section class="basket-content-wrapper">
-                <section class="basket-button-nav">
+                <section class="basket-nav-button">
                     <button class="d-none basket-toggle" onclick="">
                         <img src="./asssets/icons/home.svg" alt="Pfeil">
                     </button>
