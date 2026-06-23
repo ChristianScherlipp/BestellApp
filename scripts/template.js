@@ -16,7 +16,10 @@ function setDishesMenu() {
                         <img src="./asssets/icons/bestellAppLogo.svg" alt="Pfeil">
                     </button>
                     <button class="d-none basket-toggle" onclick="toggleBasket()">
-                        <img src="./asssets/icons/basket-empty.svg" alt="Pfeil">
+                        <section class="basket-icon-wrapper">
+                            <img src="./asssets/icons/basket-empty.svg" alt="Warenkorb">
+                            <span id="basket-counter" class="basket-counter d-none">0</span>
+                        </section>
                     </button>
                 </section>
                 <section id="basket-collapse" class="basket-collapse">

@@ -70,6 +70,7 @@ function renderBasket() {
     });
 
     updatePrice(); // Preise nach dem Rendern aktualisieren
+    updateBasketIcon();
 }
 
 function updatePrice() {
@@ -120,4 +121,20 @@ function renderPayDialog() {
 function toggleBasket() {
     const basketContent = document.getElementById('basket-collapse');
     basketContent.classList.toggle('basket-open'); // Klasse hinzufügen oder entfernen
+}
+
+function updateBasketIcon() {
+    const counter = document.getElementById('basket-counter');
+    const basketIcon = document.querySelector('.basket-icon-wrapper img');
+    const totalCount = basket.reduce((sum, item) => sum + item.count, 0);
+
+    if (totalCount > 0) {
+        counter.classList.remove('d-none'); // Counter sichtbar
+        counter.innerText = totalCount;     // Anzahl setzen
+        basketIcon.style.filter = 'invert(60%) sepia(90%) saturate(500%) hue-rotate(0deg) brightness(110%)'; // orange
+    } else {
+        counter.classList.add('d-none');    // Counter verstecken
+        counter.innerText = 0; // ← Zahl zurücksetzen
+        basketIcon.style.filter = 'invert(0)'; // zurück zu weiß
+    }
 }
