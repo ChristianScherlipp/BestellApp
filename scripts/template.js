@@ -83,8 +83,8 @@ function setMenuCard(dish) {
 function setEmptyBasket() {
     return `
     <section class="basket-empty">
-        <p>Nothing here yet.</p>
-        <p>Go ahead and choose something delicious!</p>
+        <p>Hier gibt es noch nichts.</p>
+        <p>Such dir ruhig etwas Leckeres aus!</p>
         <img src="./asssets/icons/basket-empty.svg" alt="Leerer Warenkorb">
     </section>`;
 }

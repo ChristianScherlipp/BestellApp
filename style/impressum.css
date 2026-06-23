@@ -73,3 +73,20 @@
     text-decoration: none;
     font-size: 1.125rem;
 }
+
+.impressum-section ul {
+    margin-left: 25px;
+    line-height: 1.8;
+}
+
+.impressum-section p {
+    line-height: 1.7;
+}
+
+.impressum-section {
+    margin-bottom: 35px;
+}
+
+.impressum-header h1 {
+    font-size: 2rem;
+}
