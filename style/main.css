@@ -24,6 +24,7 @@
 
 .main-headline > h2 {
     font-size: 2.5rem;
+    font-weight: 700;
 }
 
 .main-headline > img {
@@ -53,7 +54,8 @@
 
 .main-dishes-card > img {
     min-width: 16rem;
-    height: 10rem;
+    min-height: 10rem;
+    height: 12rem;
     border-radius: 0.75rem;
     object-fit: fill;
     image-rendering: auto;
@@ -73,11 +75,13 @@
 }
 
 .dishes-card-text > h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    font-weight:600;
 }
 
-.dishes-card-text > p {
+.dishes-card-text  p {
     font-size: 1rem;
+    font-weight: 500;
 }
 
 .dishes-card-price-button {
@@ -88,12 +92,14 @@
     gap: 3rem;
 }
 
-.dishes-card-price-button > p {
+.dishes-card-price-button  p {
     font-size: 2rem;
+    font-weight: 500;
 }
 
 .dishes-card-price-button > button {
     font-size: 1rem;
+    font-weight: 600;
     height: 2rem;
     border: none;
     border-radius: 1rem;

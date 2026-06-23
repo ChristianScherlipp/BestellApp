@@ -4,6 +4,7 @@ body {
     background-position:center;
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Palanquin';
 }
 
 .d-none{
