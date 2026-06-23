@@ -64,10 +64,13 @@ function renderBasket() {
     const basketRef = document.getElementById('basket-content'); // Greift auf den Warenkorb-Container zu
     basketRef.innerHTML = ""; // Leert den Warenkorb damit nichts doppelt gerendert wird
 
-    // Geht jedes Gericht im basket-Array durch und rendert eine Karte dafür
-    basket.forEach(item => {
-        basketRef.innerHTML += setBasketCard(item);
-    });
+    if (basket.length === 0) {
+        basketRef.innerHTML = setEmptyBasket(); // Leerer Zustand anzeigen
+    } else {
+        basket.forEach(item => {
+            basketRef.innerHTML += setBasketCard(item);
+        });
+    }
 
     updatePrice(); // Preise nach dem Rendern aktualisieren
     updateBasketIcon();
@@ -80,13 +83,20 @@ function updatePrice() {
                      //                            ↑ läuft durch jedes Gericht
                      //                                                           ↑ startet bei 0
     const delivery = basket.length > 0 ? 4.99 : 0; // Lieferkosten: 4,99€ wenn Warenkorb nicht leer, sonst 0
-    
     const total = subtotal + delivery; // Gesamtpreis = Zwischensumme + Lieferkosten
-
+    const payButtons = document.querySelectorAll('.pay-button');
     // Schreibt die berechneten Preise in die jeweiligen HTML-Elemente
     document.querySelector('.subtotal p:last-child').innerHTML = `${subtotal.toFixed(2).replace('.', ',')} €`;
     document.querySelector('.delivery-costs p:last-child').innerHTML = `${delivery.toFixed(2).replace('.', ',')} €`;
     document.querySelector('.final-price p:last-child').innerHTML = `<strong>${total.toFixed(2).replace('.', ',')} €</strong>`;
+    if (payButtons.length === 0) return;
+    payButtons.forEach(button => {
+    if (basket.length > 0) {
+        button.innerText = `Jetzt Bezahlen (${total.toFixed(2).replace('.', ',')} €)`;
+    } else {
+        button.innerText = 'Jetzt Bezahlen';
+    }
+});
 }
 
 function clearBasket() {

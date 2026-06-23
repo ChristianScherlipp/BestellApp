@@ -15,7 +15,7 @@ function setDishesMenu() {
                     <button class="d-none basket-toggle" onclick="">
                         <img src="./asssets/icons/bestellAppLogo.svg" alt="Pfeil">
                     </button>
-                    <button class="d-none basket-toggle" onclick="toggleBasket()">
+                    <button class=" d-none basket-toggle" onclick="toggleBasket()">
                         <section class="basket-icon-wrapper">
                             <img src="./asssets/icons/basket-empty.svg" alt="Warenkorb">
                             <span id="basket-counter" class="basket-counter d-none">0</span>
@@ -44,7 +44,7 @@ function setDishesMenu() {
                             </div>
                         </section>
                     </section>
-                    <button onclick="openDialog()">Jetzt Bezahlen</button>
+                    <button class="pay-button" onclick="openDialog()">Jetzt Bezahlen</button>
                 </section>
             </section>
         </section>`;
@@ -78,6 +78,15 @@ function setMenuCard(dish) {
         </section>
     </section>
     `;
+}
+
+function setEmptyBasket() {
+    return `
+    <section class="basket-empty">
+        <p>Nothing here yet.</p>
+        <p>Go ahead and choose something delicious!</p>
+        <img src="./asssets/icons/basket-empty.svg" alt="Leerer Warenkorb">
+    </section>`;
 }
 
 function setBasketCard(item) {
