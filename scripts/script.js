@@ -32,12 +32,16 @@ function renderCardDishes() {
 
 function addToBasket(name, price) {
     const existingDish = basket.find(item => item.name === name); // Sucht ob das Gericht schon im Warenkorb ist
-
+    const button = document.getElementById(`btn-${name}`);
     if (existingDish) {
         existingDish.count++; // Gericht bereits vorhanden → nur Zähler erhöhen
     } else {
         basket.push({ name, price, count: 1 }); // Gericht noch nicht vorhanden → neu ins Array hinzufügen mit Zähler 1
     }
+
+    // Button Text ändern
+    button.innerText = 'Hinzugefügt';
+    button.style.backgroundColor = 'rgb(117, 67, 1)'; // grün
     renderBasket(); // Warenkorb neu rendern damit die Änderung sichtbar wird
 }
 
@@ -48,6 +52,10 @@ function changeCount(name, amount) {
 
     if (existingDish.count <= 0) {
         basket = basket.filter(item => item.name !== name); // Zähler ist 0 oder kleiner → Gericht komplett aus dem Array entfernen
+        // Button zurücksetzen
+        const button = document.getElementById(`btn-${name}`);
+        button.innerText = 'Hinzufügen';
+        button.style.backgroundColor = 'rgb(80, 53, 32)'; // ursprüngliche Farbe
     }
     renderBasket(); // Warenkorb neu rendern damit die Änderung sichtbar wird
 }
@@ -81,6 +89,12 @@ function updatePrice() {
 }
 
 function clearBasket() {
+    // Alle Buttons zurücksetzen
+    basket.forEach(item => {
+        const button = document.getElementById(`btn-${item.name}`);
+        button.innerText = 'Hinzufügen';
+        button.style.backgroundColor = 'rgb(80, 53, 32)';
+    });
     basket = []; // Array leeren
     renderBasket(); // Warenkorb neu rendern (jetzt leer)
 }

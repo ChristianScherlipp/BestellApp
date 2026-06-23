@@ -71,6 +71,11 @@
     background-color: rgb(80, 53, 32);
     color: white;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.basket-collapse > button:hover {
+    transform: translateY(-3px);
 }
 
 .basket-content {

@@ -70,7 +70,7 @@ function setMenuCard(dish) {
             </div>
             <div class="dishes-card-price-button">
                 <p><strong>${dish.price.toFixed(2).replace('.', ',')} €</strong></p>
-                <button onclick="addToBasket('${dish.name}', ${dish.price})">Hinzufügen</button>
+                <button id="btn-${dish.name}" onclick="addToBasket('${dish.name}', ${dish.price})">Hinzufügen</button>
             </div>
         </section>
     </section>
@@ -100,6 +100,7 @@ function setPayDialog() {
     <dialog id="pay-dialog">
         <section class="dialog-content">
             <h2>Bestellung bestätigen</h2>
+            <img id="delivery-vehicle" src="./asssets/icons/delivery-vehicle.svg" alt="Bild eines LieferFahrzeugs">
             <p>Möchten sie Ihre Bestellung jetz bezahlen</p>
             <div class="dialog-buttons">
                 <button onclick="confirmPayment()">Ja, bezahlen</button>

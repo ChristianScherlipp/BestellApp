@@ -98,6 +98,11 @@
     border-radius: 1rem;
     background-color: rgb(80, 53, 32);
     color: white;
+    transition: all 0.3s ease;
+}
+
+.dishes-card-price-button > button:hover {
+    transform: translateY(-3px);
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
