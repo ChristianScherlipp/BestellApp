@@ -109,6 +109,7 @@ function confirmPayment() {
     clearBasket();
     closeDialog();
     showConfirmation(timestamp);
+    closeBasket();
 }
 
 function showConfirmation(timestamp) {
@@ -131,6 +132,11 @@ function renderPayDialog() {
 function toggleBasket() {
     const basketContent = document.getElementById('basket-collapse');
     basketContent.classList.toggle('basket-open');
+}
+
+function closeBasket() {
+    const basketContent = document.getElementById('basket-collapse');
+    basketContent.classList.remove('basket-open'); // Warenkorb einklappen
 }
 
 function updateBasketIcon() {
