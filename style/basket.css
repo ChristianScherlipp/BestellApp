@@ -57,7 +57,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 .basket h2 {
@@ -66,9 +66,19 @@
     color: white;
 }
 
+.basket-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
 .basket-buy {
     width: 100%;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
@@ -76,13 +86,17 @@
     color: white;
 }
 
-.basket-collapse > button {
+.basket-buy:not(.d-none) {
+    display: flex; /* nur sichtbar wenn d-none nicht gesetzt ist */
+}
+
+.basket > button {
     width: 15rem;
     height: 3rem;
     border: none;
     border-radius: 1.5rem;
     padding: 1.25rem;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     font-size: 1.125rem;
@@ -91,6 +105,10 @@
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.pay-button:not(.d-none) {
+    display: flex;
 }
 
 .basket-collapse > button:hover {
@@ -103,9 +121,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 .basket-content::-webkit-scrollbar{
@@ -142,6 +159,7 @@
     width: 90%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border-radius: 0.5rem;
     background-color: rgb(218, 194, 151);
 }
@@ -150,8 +168,14 @@
     margin: 0.5rem;
 }
 
+.basket-card-text h3{
+    line-height: 1.375rem;
+    font-size: 1.375rem;
+}
+
 .basket-card-price-button {
     width: 90%;
+    height: 1rem;
     margin: 0.4rem;
     display: flex;
     justify-content: space-between;
@@ -159,10 +183,19 @@
 }
 
 .basket-card-price-button-counter{
+    width: 4rem;
+    height: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 4px;
+}
+
+.basket-card-price-button-counter p{
+    display: flex;
+    justify-content: center;
+    width: 2rem;
+    font-size: 1.25rem;
 }
 
 .basket-card-price-button-counter > button {
@@ -170,7 +203,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 800;
     background-color: transparent;
     color: rgb(80, 53, 32);
@@ -201,16 +234,24 @@
     align-items: center;
     }
 
+    .basket-close {
+        display: block !important; /* überschreibt d-none */
+    }
+
+    .basket-collapse {
+        position: relative; /* damit absolute auf .basket-close funktioniert */
+    }
+
     .basket-counter {
         position: absolute;
-        top: -8px;
-        right: -8px;
+        top: -9px;
+        right: -9px;
         background-color: orange;
         color: rgb(39, 39, 39);
-        font-size: 0.625rem;
+        font-size: 1rem;
         font-weight: 700;
-        width: 1rem;
-        height: 1rem;
+        width: 1.125rem;
+        height: 1.125rem;
         border-radius: 50%;
         display: flex;
         justify-content: center;

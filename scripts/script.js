@@ -57,14 +57,20 @@ function changeCount(name, amount) {
 
 function renderBasket() {
     const basketRef = document.getElementById('basket-content');
+    const basketBuy = document.getElementById('basket-buy');
+    const payButton = document.getElementById('basket-pay-button');
     basketRef.innerHTML = "";
 
     if (basket.length === 0) {
         basketRef.innerHTML = setEmptyBasket();
+        basketBuy.classList.add('d-none');    // verstecken
+        payButton.classList.add('d-none');    // verstecken
     } else {
         basket.forEach(item => {
             basketRef.innerHTML += setBasketCard(item);
         });
+        basketBuy.classList.remove('d-none'); // sichtbar machen
+        payButton.classList.remove('d-none'); // sichtbar machen
     }
     updatePrice();
     updateBasketIcon();
@@ -101,13 +107,12 @@ function clearBasket() {
 
 function openDialog() {
     if (basket.length === 0) return;
-    document.getElementById('pay-dialog').showModal();
+    confirmPayment();
 }
 
 function confirmPayment() {
     const timestamp = getOrderTimestamp();
     clearBasket();
-    closeDialog();
     showConfirmation(timestamp);
     closeBasket();
 }
@@ -120,12 +125,7 @@ function showConfirmation(timestamp) {
     setTimeout(() => confirmDialog.close(), 5000);
 }
 
-function closeDialog() {
-    document.getElementById('pay-dialog').close();
-}
-
 function renderPayDialog() {
-    document.body.innerHTML += setPayDialog();
     document.body.innerHTML += setConfirmationDialog();
 }
 

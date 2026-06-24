@@ -1,5 +1,10 @@
-.footer-content {
+footer {
     width: 100%;
+    height: 128px;
+    background-color: rgba(98, 74, 54, 1);
+}
+
+.footer-content {
     height: 128px;
     background-color: rgba(98, 74, 54, 1);
     display: flex;
@@ -23,6 +28,14 @@
 .footer-content a {
     text-decoration: none;
     color: white;
+}
+
+@media screen and (min-width: 1280px) {
+    
+.footer-content {
+    padding: 0px max(0px, calc(50% - 720px));
+}
+
 }
 
 @media screen and (max-width: 1024px) {

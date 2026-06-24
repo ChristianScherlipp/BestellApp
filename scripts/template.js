@@ -23,12 +23,13 @@ function setDishesMenu() {
                     </button>
                 </section>
                 <section id="basket-collapse" class="basket-collapse">
+                    <button class="basket-close d-none" onclick="closeBasket()">✕</button>
                     <section class="basket">
                         <h2>Ihr Warenkorb</h2>
                         <section id="basket-content" class="basket-content">
                             
                         </section>
-                        <section class="basket-buy">
+                        <section class="basket-buy d-none" id="basket-buy">
                             <div class="subtotal">
                                 <p>Zwischensumm:</p>
                                 <p>Price €</p>
@@ -43,8 +44,8 @@ function setDishesMenu() {
                                 <p>fixPrice + Price €</p>
                             </div>
                         </section>
+                        <button class="pay-button d-none" id="basket-pay-button" onclick="openDialog()">Jetzt Bezahlen</button>
                     </section>
-                    <button class="pay-button" onclick="openDialog()">Jetzt Bezahlen</button>
                 </section>
             </section>
         </section>`;
@@ -107,26 +108,11 @@ function setBasketCard(item) {
     `;
 }
 
-function setPayDialog() {
-    return `
-    <dialog id="pay-dialog">
-        <section class="dialog-content">
-            <h2>Bestellung bestätigen</h2>
-            <img id="delivery-vehicle" src="./asssets/icons/delivery-vehicle.svg" alt="Bild eines LieferFahrzeugs">
-            <p>Möchten sie Ihre Bestellung jetz bezahlen</p>
-            <div class="dialog-buttons">
-                <button onclick="confirmPayment()">Ja, bezahlen</button>
-                <button onclick="closeDialog()">Abbrechen</button>
-            </div>
-        </section>
-    </dialog>
-    `;
-}
-
 function setConfirmationDialog() {
     return `
     <dialog id="confirmation-dialog">
         <section class="dialog-content">
+        <button class="dialog-close" onclick="document.getElementById('confirmation-dialog').close()">✕</button>
             <p>🚚</p>
             <h2>Bestellung bestätigt!</h2>
             <p>Dein Essen ist auf dem Weg!</p>

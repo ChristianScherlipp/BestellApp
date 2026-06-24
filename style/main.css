@@ -143,6 +143,14 @@
     }
 }
 
+@media screen and (min-width: 1280px) {
+    
+main {
+    padding: 0px max(0px, calc(50% - 720px));
+}
+
+}
+
 /* Tablet */
 @media screen and (max-width: 1024px) {
     .main-content {
