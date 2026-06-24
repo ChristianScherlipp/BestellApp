@@ -38,7 +38,6 @@ function addToBasket(name, price) {
     } else {
         basket.push({ name, price, count: 1 });
     }
-
     button.innerText = 'Hinzugefügt';
     button.style.backgroundColor = 'rgb(117, 67, 1)';
     renderBasket();
@@ -46,9 +45,7 @@ function addToBasket(name, price) {
 
 function changeCount(name, amount) {
     const existingDish = basket.find(item => item.name === name);
-
     existingDish.count += amount;
-
     if (existingDish.count <= 0) {
         basket = basket.filter(item => item.name !== name);
         const button = document.getElementById(`btn-${name}`);
@@ -69,7 +66,6 @@ function renderBasket() {
             basketRef.innerHTML += setBasketCard(item);
         });
     }
-
     updatePrice();
     updateBasketIcon();
 }
@@ -79,7 +75,6 @@ function updatePrice() {
     const delivery = basket.length > 0 ? 4.99 : 0;
     const total = subtotal + delivery;
     const payButtons = document.querySelectorAll('.pay-button');
-
     document.querySelector('.subtotal p:last-child').innerHTML = `${subtotal.toFixed(2).replace('.', ',')} €`;
     document.querySelector('.delivery-costs p:last-child').innerHTML = `${delivery.toFixed(2).replace('.', ',')} €`;
     document.querySelector('.final-price p:last-child').innerHTML = `<strong>${total.toFixed(2).replace('.', ',')} €</strong>`;
@@ -119,9 +114,7 @@ function confirmPayment() {
 function showConfirmation(timestamp) {
     const confirmDialog = document.getElementById('confirmation-dialog');
     const timestampRef = document.getElementById('order-timestamp');
-
     if (timestampRef) timestampRef.innerText = timestamp;
-
     confirmDialog.showModal();
     setTimeout(() => confirmDialog.close(), 5000);
 }
@@ -144,7 +137,6 @@ function updateBasketIcon() {
     const counter = document.getElementById('basket-counter');
     const basketIcon = document.querySelector('.basket-icon-wrapper img');
     const totalCount = basket.reduce((sum, item) => sum + item.count, 0);
-
     if (totalCount > 0) {
         counter.classList.remove('d-none');
         counter.innerText = totalCount;
