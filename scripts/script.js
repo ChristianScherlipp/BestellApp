@@ -5,6 +5,7 @@ function init() {
     renderCardDishes();  // Alle Gerichte-Karten rendern
     renderBasket();      // Warenkorb rendern (erstmal leer)
     renderPayDialog();
+    startClock();
 }
 
 function renderDishesMenu() {
@@ -116,8 +117,21 @@ function openDialog(){
 }
 
 function confirmPayment(){
+    const timestamp = getOrderTimestamp();
     clearBasket(); // Warenkorb leeren
     closeDialog(); // Dialog schließen
+    showConfirmation(timestamp);
+}
+
+function showConfirmation(timestamp) {
+    const confirmDialog = document.getElementById('confirmation-dialog');
+    const timestampRef = document.getElementById('order-timestamp');
+    
+    if (timestampRef) timestampRef.innerText = timestamp; // nur setzen wenn Element existiert
+    
+
+    confirmDialog.showModal();
+    setTimeout(() => confirmDialog.close(), 5000)
 }
 
 function closeDialog(){
@@ -126,6 +140,7 @@ function closeDialog(){
 
 function renderPayDialog() {
     document.body.innerHTML += setPayDialog();
+    document.body.innerHTML += setConfirmationDialog();
 }
 
 function toggleBasket() {
@@ -137,7 +152,6 @@ function updateBasketIcon() {
     const counter = document.getElementById('basket-counter');
     const basketIcon = document.querySelector('.basket-icon-wrapper img');
     const totalCount = basket.reduce((sum, item) => sum + item.count, 0);
-
     if (totalCount > 0) {
         counter.classList.remove('d-none'); // Counter sichtbar
         counter.innerText = totalCount;     // Anzahl setzen
@@ -147,4 +161,24 @@ function updateBasketIcon() {
         counter.innerText = 0; // ← Zahl zurücksetzen
         basketIcon.style.filter = 'invert(0)'; // zurück zu weiß
     }
+}
+
+function startClock() {
+    updateClock(); // sofort einmal aufrufen
+    setInterval(updateClock, 1000); // jede Sekunde aktualisieren
+}
+
+function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('de-DE'); // z.B. 14:32:05
+    const date = now.toLocaleDateString('de-DE'); // z.B. 23.06.2026
+    const clockRef = document.getElementById('current-time');
+    if (clockRef) clockRef.innerText = `${date} – ${time}`;
+}
+
+function getOrderTimestamp() {
+    const now = new Date();
+    const date = now.toLocaleDateString('de-DE');
+    const time = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+    return `${date} um ${time} Uhr`;
 }

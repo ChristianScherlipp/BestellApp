@@ -123,4 +123,15 @@ function setPayDialog() {
     `;
 }
 
+function setConfirmationDialog() {
+    return `
+    <dialog id="confirmation-dialog">
+        <section class="dialog-content">
+            <p>🚚</p>
+            <h2>Bestellung bestätigt!</h2>
+            <p>Dein Essen ist auf dem Weg!</p>
+            <p class="order-timestamp">Bestellt am <span id="order-timestamp"></span></p>
+        </section>
+    </dialog>`;
+}
 

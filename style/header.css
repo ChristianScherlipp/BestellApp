@@ -20,16 +20,28 @@
     margin-right: 40px;
 }
 
+.header-clock {
+    color: white;
+    font-size: 1.25rem;
+    opacity: 0.8;
+}
+
 .header-content-nav-left {
     display: flex;
-    gap: 8px;
-    font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 1rem;
     color: white;
 }
 
 .header-content-nav-left > img {
     height: 45px;
     margin-left: 40px;
+}
+
+.header-content-nav-left > p {
+    line-height: 1.25rem;
 }
 
 .header-bg-logo {
