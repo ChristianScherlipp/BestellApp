@@ -39,13 +39,21 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+    footer {
+        height: 175px;
+    }
+    
     .footer-content {
         z-index: 1;
-        margin-bottom: 50px;
+        margin-bottom: 200px;
     }
 }
 
 @media screen and (max-width: 768px) {
+    footer {
+        height: 180px;
+    }
+
     .footer-content {
         flex-direction: column;
     }
